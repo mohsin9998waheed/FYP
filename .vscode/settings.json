@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": ["./backend"],
+    "python.defaultInterpreterPath": "./backend/venv_new/Scripts/python.exe",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.typeCheckingMode": "basic"
+} 
