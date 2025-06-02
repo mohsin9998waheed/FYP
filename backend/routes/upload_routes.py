@@ -112,6 +112,7 @@ async def upload_audio(
                 audiobook_id=existing_book_id,
                 title=f"{existing_book.title} - Chapter {chapter_count + 1}",
                 audio_url=audio_url,
+                thumbnail_url=thumbnail_url,  # Set chapter thumbnail (can be None)
                 order=chapter_count + 1
             )
             db.add(new_chapter)
@@ -125,7 +126,6 @@ async def upload_audio(
             author=author,
             description=description,
             category_id=category_id,
-            cover_image_url=thumbnail_url,
             creator_id=1,  # Static for now
             is_public=True,
             created_at=datetime.utcnow()
@@ -140,6 +140,7 @@ async def upload_audio(
             audiobook_id=new_book.id,
             title=f"{title} - Chapter 1",
             audio_url=audio_url,
+            thumbnail_url=thumbnail_url,  # Set chapter thumbnail
             order=1
         )
         db.add(first_chapter)

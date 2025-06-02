@@ -36,7 +36,6 @@ class Audiobook(Base):
     title = Column(String, nullable=False)
     author = Column(String, nullable=False)
     description = Column(String)
-    cover_image_url = Column(String)
     category_id = Column(Integer, ForeignKey("categories.id"))
     creator_id = Column(Integer, ForeignKey("users.id"))
     is_public = Column(Boolean, default=True)
@@ -55,6 +54,7 @@ class Chapter(Base):
     audiobook_id = Column(Integer, ForeignKey("audiobooks.id"), nullable=False)
     title = Column(String, nullable=False)
     audio_url = Column(String, nullable=False)
+    thumbnail_url = Column(String)
     order = Column(Integer, default=1)
     created_at = Column(DateTime, default=datetime.utcnow)
 
